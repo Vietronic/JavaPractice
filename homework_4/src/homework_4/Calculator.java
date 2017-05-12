@@ -16,7 +16,7 @@ public class Calculator extends JFrame /* implements ActionListener */{
 	public static final int DEAFULT_WIDTH = 260;
 	public static final int DEAFULT_HEIGHT = 500;
 	/** 计算器上的键的显示名字 */  
-    private final String[] KEYS = { "%", "√", "χ²", "¹/χ", "CE", "C", "<-", "÷",  
+    private final String[] KEYS = { "%", "√", "χ²", "1/χ", "CE", "C", "<-", "÷",  
             "7", "8", "9", "×", "4", "5", "6", "－", "1", "2", "3", "＋", "±", "0", "·", "＝" };  
 	JButton[] button;
 	JTextField text;
@@ -26,10 +26,15 @@ public class Calculator extends JFrame /* implements ActionListener */{
 	public Calculator(){
 		// 设置窗口标题
 		super("计算器");
+		init();
 		this.setSize( DEAFULT_WIDTH, DEAFULT_HEIGHT);
 		this.setVisible(true);
-
 		
+        setVisible(true);
+		
+	}
+	
+	private void init(){
 		// 创建按钮对象
 		button = new JButton[KEYS.length];
 		
@@ -59,8 +64,6 @@ public class Calculator extends JFrame /* implements ActionListener */{
         	button[i].setFont(new java.awt.Font("幼圆",0,18));
         	buttonPanel.add(button[i]);
         }
-		
-        setVisible(true);
 		
 	}
 
